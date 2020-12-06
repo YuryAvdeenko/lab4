@@ -15,6 +15,7 @@ import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import javax.swing.JPanel;
 @SuppressWarnings("serial")
+
 public class GraphicsDisplay extends JPanel {
     // Список координат точек для построения графика
     private Double[][] graphicsData;

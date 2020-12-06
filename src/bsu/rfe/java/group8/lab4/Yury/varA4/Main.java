@@ -147,6 +147,32 @@ Double.SIZE/8 байт;
     }
 
     public static void main(String[] args) {
-	// write your code here
+// Создать и показать экземпляр главного окна приложения
+        Main frame = new Main();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+
+    // Класс-слушатель событий, связанных с отображением меню
+    private class GraphicsMenuListener implements MenuListener {
+        // Обработчик, вызываемый перед показом меню
+        public void menuSelected(MenuEvent e) {
+// Доступность или недоступность элементов меню "График"
+            //  определяется загруженностью данных
+            showAxisMenuItem.setEnabled(fileLoaded);
+            showMarkersMenuItem.setEnabled(fileLoaded);
+            showIntGraphicsMenuItem.setEnabled(fileLoaded);
+
+        }
+
+        // Обработчик, вызываемый после того, как меню исчезло с экрана
+        public void menuDeselected(MenuEvent e) {
+        }
+
+        // Обработчик, вызываемый в случае отмены выбора пункта меню
+//(очень редкая ситуация)
+        public void menuCanceled(MenuEvent e) {
+        }
+    }
     }
 
